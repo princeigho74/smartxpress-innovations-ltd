@@ -1,0 +1,59 @@
+/* General reset */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background: #fdfdfd;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background: #fff;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  position: sticky; top: 0; z-index: 100;
+}
+
+.logo { width: 50px; }
+
+.nav-links { display: flex; gap: 20px; list-style: none; }
+.nav-links a { text-decoration: none; color: #333; padding-bottom: 5px; }
+.nav-links a:hover, .nav-links .active { border-bottom: 2px solid #1E90FF; }
+
+/* Animations */
+@keyframes rainbow-text { 0% {color:red;} 50%{color:blue;} 100%{color:green;} }
+.welcome { text-align:center; font-size:28px; margin:20px; animation: rainbow-text 3s infinite; }
+
+@keyframes swing { 0%,100%{transform:rotate(0);} 50%{transform:rotate(10deg);} }
+.swing-logo { display:block; margin:20px auto; width:150px; animation:swing 3s infinite; }
+
+/* Sections */
+.hero { text-align: center; padding: 40px 20px; }
+.hero h1 { font-size: 32px; margin-bottom: 10px; }
+.hero p { font-size: 18px; margin-bottom: 20px; }
+.btn { padding: 10px 20px; background:#1E90FF; color:#fff; border:none; border-radius:5px; text-decoration:none; cursor:pointer; }
+.btn:hover { background:#0b60c3; }
+
+/* Grid */
+.grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:20px; padding:20px; }
+.card { text-align:center; }
+.card img { width:100%; max-width:250px; border-radius:10px; transition:transform 0.3s; }
+.card img:hover { transform:scale(1.05); }
+
+/* Contact form */
+.contact-form { display:flex; flex-direction:column; gap:10px; max-width:400px; margin:20px auto; }
+.contact-form input, .contact-form textarea { padding:10px; border:1px solid #ccc; border-radius:5px; }
+.contact-info { text-align:center; margin-top:20px; }
+
+/* Footer */
+footer { text-align:center; padding:15px; background:#f5f5f5; margin-top:30px; }
+
+/* Responsive */
+@media(max-width:600px) {
+  .welcome { font-size:20px; }
+  .hero h1 { font-size:24px; }
+}
