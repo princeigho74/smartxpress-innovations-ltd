@@ -1,11 +1,10 @@
-// Form validation
+// Mobile menu toggle
 document.addEventListener("DOMContentLoaded", () => {
-  const form = document.getElementById("contactForm");
-  if (form) {
-    form.addEventListener("submit", (e) => {
-      e.preventDefault();
-      alert("Thank you for contacting SmartXpress! We’ll get back to you soon.");
-      form.reset();
-    });
-  }
+  const toggle = document.querySelector(".menu-toggle");
+  const navLinks = document.querySelector(".nav-links");
+
+  toggle.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+  });
 });
+
