@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact Us - SmartXpress Innovation LTD</title>
+
+  <!-- CSS -->
   <link rel="stylesheet" href="css/styles.css">
 
   <!-- Google reCAPTCHA -->
@@ -19,10 +21,10 @@
 </head>
 <body>
 
-  <!-- ✅ Fixed Navigation -->
+  <!-- NAVBAR -->
   <header class="navbar">
-    <div class="logo">SmartXpress</div>
-    <div class="hamburger">&#9776;</div>
+    <div class="logo brand">SmartXpress</div>
+    <div class="menu-toggle">&#9776;</div>
     <nav>
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
@@ -33,7 +35,7 @@
     </nav>
   </header>
 
-  <!-- ✅ Contact Section -->
+  <!-- CONTACT SECTION -->
   <section class="contact-section">
     <h2>Contact Us</h2>
     <p>We’d love to hear from you! Reach us directly via WhatsApp or Email.</p>
@@ -43,20 +45,74 @@
       <input type="email" id="email" placeholder="Your Email" required>
       <textarea id="message" rows="5" placeholder="Your Message" required></textarea>
 
-      <!-- reCAPTCHA widget -->
+      <!-- reCAPTCHA -->
       <div class="g-recaptcha" data-sitekey="6LfkeNgrAAAAAIMyrXWnrV7gxN1zxGd4QBNyXaWA"></div>
 
       <button type="submit" class="btn">Send Message</button>
     </form>
 
-    <!-- ✅ Direct Contacts -->
+    <!-- WhatsApp Button -->
+    <a href="#" target="_blank" class="whatsapp-btn">
+      📱 Chat with us on WhatsApp
+    </a>
+
+    <!-- Direct Contact Info -->
     <div class="contact-info">
       <p><strong>📧 Email:</strong> <a href="mailto:smartxpress74@gmail.com">smartxpress74@gmail.com</a></p>
       <p><strong>📞 Phone:</strong> <a href="tel:+2348065202102">+234 806 520 2102</a></p>
     </div>
   </section>
 
+  <!-- JS -->
   <script src="js/script.js"></script>
+  <script>
+    // Update WhatsApp link dynamically with form info
+    const whatsappBtn = document.querySelector(".whatsapp-btn");
+    const form = document.getElementById("contactForm");
+
+    if (form && whatsappBtn) {
+      form.addEventListener("submit", function(e) {
+        e.preventDefault();
+
+        const name = document.getElementById("name").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const message = document.getElementById("message").value.trim();
+
+        if (!name || !email || !message) {
+          alert("⚠️ Please fill all fields!");
+          return;
+        }
+
+        // reCAPTCHA check
+        const recaptchaResponse = grecaptcha.getResponse();
+        if (!recaptchaResponse) {
+          alert("⚠️ Please verify that you are not a robot!");
+          return;
+        }
+
+        // Send Email via EmailJS
+        emailjs.send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", {
+          from_name: name,
+          from_email: email,
+          to_email: "smartxpress74@gmail.com",
+          message: message,
+          "g-recaptcha-response": recaptchaResponse
+        }).then(function(response) {
+          alert("✅ Message sent successfully via Email!");
+        }, function(error) {
+          alert("❌ Failed to send email. Please try again.");
+        });
+
+        // WhatsApp Auto-fill
+        const whatsappNumber = "2348065202102";
+        const whatsappURL = `https://wa.me/${whatsappNumber}?text=Hello,%20my%20name%20is%20${encodeURIComponent(name)}.%20My%20email%20is%20${encodeURIComponent(email)}.%20Message:%20${encodeURIComponent(message)}`;
+        window.open(whatsappURL, "_blank");
+
+        // Reset form + reCAPTCHA
+        form.reset();
+        grecaptcha.reset();
+      });
+    }
+  </script>
 </body>
 </html>
-
