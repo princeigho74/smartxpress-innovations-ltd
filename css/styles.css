@@ -1,10 +1,12 @@
 /* ===============================
-   RESET & BASE (existing)
+   RESET & BASE
 =============================== */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 body { font-family: 'Segoe UI', sans-serif; background: #fdfdfd; color: #333; line-height: 1.6; }
 
-/* NAVBAR (existing) */
+/* ===============================
+   NAVBAR
+=============================== */
 .navbar {
   display: flex; justify-content: space-between; align-items: center;
   padding: 15px 20px; background: #1E90FF; color: #fff; position: sticky; top: 0; z-index: 1000;
@@ -16,17 +18,32 @@ body { font-family: 'Segoe UI', sans-serif; background: #fdfdfd; color: #333; li
 .nav-links a.active, .nav-links a:hover { border-bottom: 2px solid #fff; }
 .menu-toggle { display: none; font-size: 28px; cursor: pointer; }
 
-/* HERO (existing) */
+/* ===============================
+   HERO
+=============================== */
 .hero {
   text-align: center; padding: 60px 20px;
   background: linear-gradient(to right, #1E90FF, #00bcd4); color: #fff;
 }
 .hero h1 { font-size: 34px; margin-bottom: 15px; }
 .hero p { font-size: 18px; margin-bottom: 20px; }
-.btn { padding: 12px 24px; background: #fff; color: #1E90FF; border-radius: 30px; text-decoration: none; font-weight: bold; transition: 0.3s; }
-.btn:hover { background: #f1f1f1; }
+.btn {
+  padding: 12px 24px;
+  background: #fff;
+  color: #1E90FF;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+  cursor: pointer;
+}
+.btn:hover {
+  background: #f1f1f1;
+}
 
-/* SERVICES (existing) */
+/* ===============================
+   SERVICES
+=============================== */
 .showcase { padding: 40px 20px; text-align: center; }
 .showcase h2 { font-size: 28px; margin-bottom: 25px; color: #1E90FF; }
 .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
@@ -38,14 +55,14 @@ body { font-family: 'Segoe UI', sans-serif; background: #fdfdfd; color: #333; li
 .card img { width: 100%; border-radius: 10px; margin-bottom: 15px; }
 .card h3 { margin-bottom: 10px; color: #1E90FF; }
 
-/* FOOTER (existing) */
+/* ===============================
+   FOOTER
+=============================== */
 footer { text-align: center; padding: 20px; background: #f5f5f5; font-size: 14px; }
 
 /* ===============================
-   CONTACT PAGE STYLES (new)
+   CONTACT PAGE
 =============================== */
-
-/* Contact Section */
 .contact-section {
   max-width: 600px;
   margin: 3rem auto;
@@ -55,27 +72,24 @@ footer { text-align: center; padding: 20px; background: #f5f5f5; font-size: 14px
   box-shadow: 0 8px 16px rgba(0,0,0,0.4);
   color: #e1e4e8;
 }
-
 .contact-section h2 {
   font-size: 2rem;
   color: #58a6ff;
   margin-bottom: 0.5rem;
   text-align: center;
 }
-
 .contact-section p {
   text-align: center;
   margin-bottom: 2rem;
   color: #c9d1d9;
 }
 
-/* Form */
+/* Form Styles */
 form {
   display: flex;
   flex-direction: column;
   gap: 1rem;
 }
-
 input, textarea {
   padding: 0.75rem 1rem;
   border-radius: 8px;
@@ -85,57 +99,30 @@ input, textarea {
   font-size: 1rem;
   transition: border 0.3s, box-shadow 0.3s;
 }
-
 input:focus, textarea:focus {
   border-color: #58a6ff;
   box-shadow: 0 0 8px #58a6ff50;
   outline: none;
 }
+textarea { resize: vertical; }
 
-textarea {
-  resize: vertical;
+/* ===============================
+   BUTTON PULSE ANIMATION
+=============================== */
+@keyframes pulse {
+  0% { transform: scale(1); box-shadow: 0 0 0 rgba(37, 211, 102, 0.4); }
+  50% { transform: scale(1.05); box-shadow: 0 0 15px rgba(37, 211, 102, 0.6); }
+  100% { transform: scale(1); box-shadow: 0 0 0 rgba(37, 211, 102, 0.4); }
 }
 
-/* Button */
+/* EmailJS Submit Button Pulse */
 .btn {
-  background-color: #58a6ff;
-  color: #0d1117;
-  padding: 0.75rem 1rem;
-  font-size: 1rem;
-  font-weight: 600;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background 0.3s, transform 0.2s;
+  animation: pulse 2s infinite;
 }
-
 .btn:hover {
+  transform: scale(1.05);
   background-color: #1f6feb;
-  transform: translateY(-2px);
-}
-
-/* Contact Info */
-.contact-info {
-  margin-top: 2rem;
-  text-align: center;
-  color: #c9d1d9;
-}
-
-.contact-info a {
-  color: #58a6ff;
-  text-decoration: none;
-  transition: color 0.3s;
-}
-
-.contact-info a:hover {
-  color: #1f6feb;
-}
-
-/* reCAPTCHA */
-.g-recaptcha {
-  margin: 1rem 0;
-  transform: scale(0.9);
-  transform-origin: 0 0;
+  animation: none;
 }
 
 /* WhatsApp Button */
@@ -151,20 +138,39 @@ textarea {
   transition: background 0.3s, transform 0.2s;
   margin-top: 1rem;
   text-align: center;
+  animation: pulse 2s infinite;
 }
-
 .whatsapp-btn:hover {
   background-color: #1ebe57;
-  transform: translateY(-2px);
+  transform: scale(1.1);
+  animation: none;
+}
+.whatsapp-btn i { margin-right: 0.5rem; vertical-align: middle; }
+
+/* Contact Info */
+.contact-info {
+  margin-top: 2rem;
+  text-align: center;
+  color: #c9d1d9;
+}
+.contact-info a {
+  color: #58a6ff;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+.contact-info a:hover {
+  color: #1f6feb;
 }
 
-.whatsapp-btn i {
-  margin-right: 0.5rem;
-  vertical-align: middle;
+/* reCAPTCHA */
+.g-recaptcha {
+  margin: 1rem 0;
+  transform: scale(0.9);
+  transform-origin: 0 0;
 }
 
 /* ===============================
-   RESPONSIVE (existing + new)
+   RESPONSIVE
 =============================== */
 @media(max-width: 768px) {
   .nav-links { display: none; flex-direction: column; gap: 10px; background: #1E90FF; padding: 15px; }
@@ -172,15 +178,9 @@ textarea {
   .menu-toggle { display: block; }
   .hero h1 { font-size: 26px; }
 
-  /* Contact Form Full Width */
-  .btn, .whatsapp-btn {
-    width: 100%;
-    text-align: center;
-  }
+  /* Form Buttons Full Width */
+  .btn, .whatsapp-btn { width: 100%; text-align: center; }
 }
-
 @media screen and (max-width: 480px) {
-  .g-recaptcha {
-    transform: scale(0.85);
-  }
+  .g-recaptcha { transform: scale(0.85); }
 }
