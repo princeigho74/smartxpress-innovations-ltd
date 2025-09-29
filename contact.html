@@ -3,42 +3,60 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact | SmartXpress</title>
+  <title>Contact Us - SmartXpress Innovation LTD</title>
   <link rel="stylesheet" href="css/styles.css">
-  <script defer src="js/script.js"></script>
+
+  <!-- Google reCAPTCHA -->
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+  <!-- EmailJS SDK -->
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+  <script>
+    (function() {
+      emailjs.init("YOUR_PUBLIC_KEY"); // ⚠️ Replace with your EmailJS Public Key
+    })();
+  </script>
 </head>
 <body>
+
+  <!-- ✅ Fixed Navigation -->
   <header class="navbar">
-    <div class="logo-container">
-      <img src="https://github.com/princeigho74/images/raw/main/mycompanylogo.png" class="logo">
-      <span>SMARTXPRESS INNOVATION LTD</span>
-    </div>
+    <div class="logo">SmartXpress</div>
+    <div class="hamburger">&#9776;</div>
     <nav>
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
         <li><a href="services.html">Services</a></li>
-        <li><a class="active" href="contact.html">Contact</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
       </ul>
     </nav>
   </header>
 
-  <section class="hero fade-in">
-    <h1>Contact Us</h1>
-    <form id="contactForm" class="contact-form">
-      <input type="text" placeholder="Your Name" required>
-      <input type="email" placeholder="Your Email" required>
-      <textarea placeholder="Your Message" required></textarea>
+  <!-- ✅ Contact Section -->
+  <section class="contact-section">
+    <h2>Contact Us</h2>
+    <p>We’d love to hear from you! Reach us directly via WhatsApp or Email.</p>
+
+    <form id="contactForm">
+      <input type="text" id="name" placeholder="Your Name" required>
+      <input type="email" id="email" placeholder="Your Email" required>
+      <textarea id="message" rows="5" placeholder="Your Message" required></textarea>
+
+      <!-- reCAPTCHA widget -->
+      <div class="g-recaptcha" data-sitekey="6LfkeNgrAAAAAIMyrXWnrV7gxN1zxGd4QBNyXaWA"></div>
+
       <button type="submit" class="btn">Send Message</button>
     </form>
-    <p class="contact-info">
-      📞 +2348065202102 <br>
-      📧 princeigho74@gmail.com
-    </p>
+
+    <!-- ✅ Direct Contacts -->
+    <div class="contact-info">
+      <p><strong>📧 Email:</strong> <a href="mailto:smartxpress74@gmail.com">smartxpress74@gmail.com</a></p>
+      <p><strong>📞 Phone:</strong> <a href="tel:+2348065202102">+234 806 520 2102</a></p>
+    </div>
   </section>
 
-  <footer>
-    <p>&copy; 2025 SmartXpress Innovation LTD</p>
-  </footer>
+  <script src="js/script.js"></script>
 </body>
 </html>
+
