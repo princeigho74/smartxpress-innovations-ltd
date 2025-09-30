@@ -3,41 +3,44 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Services | SmartXpress</title>
+  <title>Services - SmartXpress</title>
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
   <header class="navbar">
     <div class="logo-container">
-      <img src="https://github.com/princeigho74/images/raw/main/mycompanylogo.png" class="logo">
+      <img src="images/logo.png" alt="SmartXpress Logo">
       <span>SMARTXPRESS INNOVATION LTD</span>
     </div>
+    <div class="hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
     <nav>
-      <ul class="nav-links">
+      <ul class="nav-links" id="navLinks">
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
-        <li><a class="active" href="services.html">Services</a></li>
+        <li><a href="services.html" class="active">Services</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
   </header>
 
-  <section class="hero fade-in">
+  <section class="content">
     <h1>Our Services</h1>
-    <div class="grid">
-      <div class="card">
-        <img src="https://github.com/princeigho74/images/raw/main/smartxpress%20device.png">
-        <p>AI Car Fault Detection</p>
-      </div>
-      <div class="card">
-        <img src="https://github.com/princeigho74/images/raw/main/419a27c026391cf_file_0000000094086243ab055dcc588f8dff_wm%20(2).png">
-        <p>Agrilink360 Marketplace</p>
-      </div>
-    </div>
+    <ul>
+      <li>Software, App & Website Development</li>
+      <li>Digital Solutions & Automation</li>
+      <li>Logistics (Bolt, Dispatch, Registration, Airtime/Data)</li>
+      <li>Fintech Innovations, Payments & Wallets</li>
+      <li>Real Estate Digital Solutions & e-Rooms</li>
+    </ul>
   </section>
 
   <footer>
     <p>&copy; 2025 SmartXpress Innovation LTD</p>
   </footer>
+
+  <script src="js/script.js"></script>
 </body>
 </html>
+
