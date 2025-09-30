@@ -3,32 +3,42 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About Us | SmartXpress</title>
+  <title>About - SmartXpress</title>
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
   <header class="navbar">
     <div class="logo-container">
-      <img src="https://github.com/princeigho74/images/raw/main/mycompanylogo.png" class="logo">
+      <img src="images/logo.png" alt="SmartXpress Logo">
       <span>SMARTXPRESS INNOVATION LTD</span>
     </div>
+    <div class="hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
     <nav>
-      <ul class="nav-links">
+      <ul class="nav-links" id="navLinks">
         <li><a href="index.html">Home</a></li>
-        <li><a class="active" href="about.html">About</a></li>
+        <li><a href="about.html" class="active">About</a></li>
         <li><a href="services.html">Services</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
   </header>
 
-  <section class="hero fade-in">
+  <section class="content">
     <h1>About Us</h1>
-    <p>SmartXpress Innovation LTD is dedicated to building smart digital solutions in AI, IoT, logistics, finance, and agriculture. Our vision is to connect people, opportunities, and technology to make life easier and more efficient.</p>
+    <p>SmartXpress Innovation LTD (Group) is a CAC-approved, technology-driven global company with a focus on digital solutions, IoT tools, and innovation services.</p>
+    <p><strong>Tagline:</strong> Driving Innovation, Connecting Opportunities.</p>
+    <h2>Mission</h2>
+    <p>To deliver world-class technology, logistics, fintech, and real estate solutions that connect people, empower businesses, and shape a smarter digital future.</p>
+    <h2>Vision</h2>
+    <p>To become a global leader in innovation-driven enterprises, leveraging technology and creativity to connect opportunities across industries.</p>
   </section>
 
   <footer>
     <p>&copy; 2025 SmartXpress Innovation LTD</p>
   </footer>
+
+  <script src="js/script.js"></script>
 </body>
 </html>
