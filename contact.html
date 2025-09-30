@@ -3,126 +3,46 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact - SmartXpress Innovation LTD</title>
-
-  <!-- CSS -->
+  <title>Contact - SmartXpress</title>
   <link rel="stylesheet" href="css/styles.css">
-
-  <!-- Google reCAPTCHA -->
-  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-
-  <!-- EmailJS -->
-  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
-  <script>
-    (function() {
-      emailjs.init("YOUR_PUBLIC_KEY"); // Replace with your EmailJS public key
-    })();
-  </script>
-
-  <!-- JS -->
-  <script defer src="js/script.js"></script>
 </head>
 <body>
-
-  <!-- Navbar -->
-  <header>
-    <nav class="navbar">
-      <div class="logo">
-        <img src="images/logo.png" alt="SmartXpress Logo">
-      </div>
-      <ul class="nav-links">
+  <header class="navbar">
+    <div class="logo-container">
+      <img src="images/logo.png" alt="SmartXpress Logo">
+      <span>SMARTXPRESS INNOVATION LTD</span>
+    </div>
+    <div class="hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
+    <nav>
+      <ul class="nav-links" id="navLinks">
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="services.html">Services</a></li>
         <li><a href="contact.html" class="active">Contact</a></li>
       </ul>
-      <div class="hamburger">&#9776;</div>
     </nav>
   </header>
 
-  <!-- Contact Section -->
-  <section class="contact-section">
+  <section class="content">
     <h1>Contact Us</h1>
-    <p>We’d love to hear from you! Reach us through the form below or connect directly on WhatsApp.</p>
+    <p>📱 WhatsApp: +2349020779297</p>
+    <p>📧 Email: smartxpress74@gmail.com</p>
 
-    <form id="contactForm">
+    <form class="contact-form" onsubmit="return validateForm()">
       <input type="text" id="name" placeholder="Your Name" required>
       <input type="email" id="email" placeholder="Your Email" required>
-      <textarea id="message" rows="5" placeholder="Your Message" required></textarea>
-
-      <!-- Google reCAPTCHA widget -->
-      <div class="g-recaptcha" data-sitekey="YOUR_SITE_KEY"></div>
-
+      <textarea id="message" placeholder="Your Message" required></textarea>
       <button type="submit" class="btn">Send Message</button>
     </form>
-
-    <!-- WhatsApp Button -->
-    <a href="#" target="_blank" class="whatsapp-btn">
-      📱 Chat with us on WhatsApp
-    </a>
-
-    <!-- Direct Contact Info -->
-    <div class="contact-info">
-      <p><strong>📞 Phone:</strong> <a href="tel:+2348065202102">+234 806 520 2102</a></p>
-      <p><strong>📧 Email:</strong> <a href="mailto:smartxpress74@gmail.com">smartxpress74@gmail.com</a></p>
-    </div>
   </section>
 
-  <!-- Footer -->
   <footer>
     <p>&copy; 2025 SmartXpress Innovation LTD</p>
-    <p>📞 +2348065202102 | 📧 smartxpress74@gmail.com</p>
   </footer>
 
-  <!-- JS Inline for Form + WhatsApp -->
-  <script>
-    const form = document.getElementById("contactForm");
-    const whatsappBtn = document.querySelector(".whatsapp-btn");
-
-    if (form && whatsappBtn) {
-      form.addEventListener("submit", function(e) {
-        e.preventDefault();
-
-        const name = document.getElementById("name").value.trim();
-        const email = document.getElementById("email").value.trim();
-        const message = document.getElementById("message").value.trim();
-
-        if (!name || !email || !message) {
-          alert("⚠️ Please fill all fields!");
-          return;
-        }
-
-        // reCAPTCHA check
-        const recaptchaResponse = grecaptcha.getResponse();
-        if (!recaptchaResponse) {
-          alert("⚠️ Please verify that you are not a robot!");
-          return;
-        }
-
-        // Send Email via EmailJS
-        emailjs.send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", {
-          from_name: name,
-          from_email: email,
-          to_email: "smartxpress74@gmail.com",
-          message: message,
-          "g-recaptcha-response": recaptchaResponse
-        }).then(function(response) {
-          alert("✅ Message sent successfully via Email!");
-        }, function(error) {
-          alert("❌ Failed to send email. Please try again.");
-        });
-
-        // WhatsApp Auto-fill
-        const whatsappNumber = "2348065202102";
-        const whatsappURL = `https://wa.me/${whatsappNumber}?text=Hello,%20my%20name%20is%20${encodeURIComponent(name)}.%20My%20email%20is%20${encodeURIComponent(email)}.%20Message:%20${encodeURIComponent(message)}`;
-        window.open(whatsappURL, "_blank");
-
-        // Reset form + reCAPTCHA
-        form.reset();
-        grecaptcha.reset();
-      });
-    }
-  </script>
-
+  <script src="js/script.js"></script>
 </body>
 </html>
+
