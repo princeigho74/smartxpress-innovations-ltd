@@ -4,82 +4,60 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SmartXpress Innovation LTD</title>
-  <link rel="stylesheet" href="style.css">
-  <script defer src="script.js"></script>
+  <link rel="stylesheet" href="css/styles.css">
+  <script defer src="js/script.js"></script>
 </head>
 <body>
-  <!-- 🔹 Navigation -->
-  <header>
-    <nav class="navbar">
-      <div class="logo">
-        <img src="images/logo.png" alt="SmartXpress Logo">
-        <span>SmartXpress Innovation LTD</span>
-      </div>
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="logo-container">
+      <img src="https://github.com/princeigho74/images/raw/main/mycompanylogo.png" alt="SmartXpress Logo" class="logo">
+      <span class="brand">SmartXpress</span>
+    </div>
+    <nav>
       <ul class="nav-links">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#subsidiaries">Subsidiaries</a></li>
-        <li><a href="#mission">Mission & Vision</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a class="active" href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="contact.html">Contact</a></li>
       </ul>
+      <div class="menu-toggle">&#9776;</div>
     </nav>
   </header>
 
-  <!-- 🔹 Hero Section -->
-  <section id="home" class="hero">
-    <div class="hero-content">
-      <h1>Driving Innovation, Connecting Opportunities</h1>
-      <p>Empowering businesses and individuals with smart, scalable solutions that drive efficiency, growth, and transformation.</p>
-      <a href="#contact" class="btn">Get in Touch</a>
-    </div>
+  <!-- Hero -->
+  <section class="hero fade-in">
+    <h1>Driving Innovation,<br> Connecting Opportunities</h1>
+    <p>Smart digital solutions for Tech, Logistics, Finance, and Agriculture.</p>
+    <a href="services.html" class="btn">Explore Services</a>
   </section>
 
-  <!-- 🔹 Subsidiaries -->
-  <section id="subsidiaries" class="section">
-    <h2>Our Subsidiaries</h2>
-    <div class="cards">
+  <!-- Services / Showcase -->
+  <section class="showcase slide-up">
+    <h2>Our Solutions</h2>
+    <div class="grid">
       <div class="card">
-        <img src="images/car_ai.png" alt="AI Device for Cars">
-        <h3>SmartXpress Tech</h3>
-        <p>Software Development, Digital Solutions & Automation, Corporate Training.</p>
+        <img src="https://github.com/princeigho74/images/raw/main/smartxpress%20device.png" alt="Car Faults Detector">
+        <h3>AI Car Fault Detection</h3>
+        <p>Advanced AI-powered IoT device to diagnose car faults instantly.</p>
       </div>
       <div class="card">
-        <img src="images/agrilink.png" alt="Agrilink App">
-        <h3>SmartXpress Logistics</h3>
-        <p>Bolt & Vehicle Hiring, Dispatch Services, Business Support, Data Reselling.</p>
+        <img src="https://github.com/princeigho74/images/raw/main/419a27c026391cf_file_0000000094086243ab055dcc588f8dff_wm%20(2).png" alt="AgriLink360 App">
+        <h3>AgriLink360 App</h3>
+        <p>Empowering farmers and buyers with a seamless digital marketplace.</p>
       </div>
       <div class="card">
-        <img src="images/happy.png" alt="Happy Igho Umukoro">
-        <h3>SmartXpress Finance</h3>
-        <p>Fintech, Digital Payments, Blockchain & AI-powered Solutions.</p>
+        <img src="https://github.com/princeigho74/images/raw/main/my%20pic.jpg" alt="CEO - Happy Igho Umukoro">
+        <h3>Leadership</h3>
+        <p>Founded by <b>Happy Igho Umukoro</b>, driving innovation across Africa.</p>
       </div>
     </div>
   </section>
 
-  <!-- 🔹 Mission & Vision -->
-  <section id="mission" class="section alt-bg">
-    <h2>Our Mission & Vision</h2>
-    <p><strong>Mission:</strong> Delivering world-class technology, logistics, fintech, and real estate solutions that connect people and empower businesses.</p>
-    <p><strong>Vision:</strong> To become a global leader in innovation-driven enterprises, leveraging technology and creativity to connect opportunities across industries.</p>
-  </section>
-
-  <!-- 🔹 Contact -->
-  <section id="contact" class="section">
-    <h2>Contact Us</h2>
-    <form class="contact-form">
-      <input type="text" placeholder="Your Name" required>
-      <input type="email" placeholder="Your Email" required>
-      <textarea placeholder="Your Message" required></textarea>
-      <button type="submit" class="btn">Send Message</button>
-    </form>
-    <div class="contact-info">
-      <p>📱 WhatsApp: <a href="https://wa.me/2349020779297">+2349020779297</a></p>
-      <p>📧 Email: <a href="mailto:smartxpress74@gmail.com">smartxpress74@gmail.com</a></p>
-    </div>
-  </section>
-
-  <!-- 🔹 Footer -->
+  <!-- Footer -->
   <footer>
-    <p>© 2025 SmartXpress Innovation LTD. All Rights Reserved.</p>
+    <p>&copy; 2025 SmartXpress Innovation LTD</p>
+    <p>📞 +2348065202102 | 📧 smartxpress74@gmail.com</p>
   </footer>
 </body>
 </html>
