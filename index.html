@@ -788,9 +788,34 @@
         <p>Empowering farmers and buyers with a seamless digital marketplace for agricultural products.</p>
       </div>
       <div class="card">
-        <img src="https://github.com/princeigho74/images/raw/main/my%20pic.jpg" alt="CEO - Happy Igho Umukoro">
-        <h3>Leadership</h3>
-        <p>Founded by <strong>Happy Igho Umukoro</strong>, driving innovation and technological advancement across Africa.</p>
+        <img src="https://images.unsplash.com/photo-1501504905252-473c47e087f8?w=500" alt="EduSpark">
+        <h3>EduSpark</h3>
+        <p>Educational platform revolutionizing learning experiences with interactive tools and resources.</p>
+        <a href="https://edu-spark-nine.vercel.app/" target="_blank" class="btn" style="margin-top: 15px; padding: 12px 25px; font-size: 14px;">Visit Platform</a>
+      </div>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=500" alt="AI Security Shield">
+        <h3>AI Security Shield</h3>
+        <p>Next-generation cybersecurity solution powered by artificial intelligence for comprehensive protection.</p>
+        <a href="https://ai-security-shield.vercel.app/" target="_blank" class="btn" style="margin-top: 15px; padding: 12px 25px; font-size: 14px;">Explore Security</a>
+      </div>
+      <div class="card">
+        <img src="https://github.com/princeigho74/images/raw/main/my%20pic.jpg" alt="CEO Portfolio">
+        <h3>CEO Portfolio</h3>
+        <p>Showcasing innovative projects and leadership in driving technological advancement across Africa.</p>
+        <a href="https://my-portfolio-p9k9.vercel.app/" target="_blank" class="btn" style="margin-top: 15px; padding: 12px 25px; font-size: 14px;">View Portfolio</a>
+      </div>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=500" alt="UrhoboPedia">
+        <h3>UrhoboPedia</h3>
+        <p>Digital encyclopedia preserving and celebrating Urhobo culture, history, and heritage for future generations.</p>
+        <a href="https://urhobo-pedia.vercel.app/" target="_blank" class="btn" style="margin-top: 15px; padding: 12px 25px; font-size: 14px;">Discover Culture</a>
+      </div>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=500" alt="SafeSpace Digital Literacy">
+        <h3>SafeSpace Digital Literacy</h3>
+        <p>Empowering communities with essential digital skills and online safety education for a safer internet.</p>
+        <a href="https://safespace-digital-literacy-pitch-de.vercel.app/" target="_blank" class="btn" style="margin-top: 15px; padding: 12px 25px; font-size: 14px;">Learn More</a>
       </div>
     </div>
   </section>
@@ -893,87 +918,4 @@
         navbar.classList.remove('scrolled');
       }
 
-      // Scroll to top button
-      const scrollTop = document.getElementById('scrollTop');
-      if (window.scrollY > 300) {
-        scrollTop.classList.add('visible');
-      } else {
-        scrollTop.classList.remove('visible');
-      }
-    });
-
-    // Scroll to top functionality
-    document.getElementById('scrollTop').addEventListener('click', () => {
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-      });
-    });
-
-    // Form submission with animation
-    const contactForm = document.getElementById('contactForm');
-    
-    contactForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      
-      const name = document.getElementById('name').value;
-      const email = document.getElementById('email').value;
-      const message = document.getElementById('message').value;
-
-      if (name && email && message) {
-        // Success animation
-        const submitBtn = contactForm.querySelector('.btn-submit');
-        submitBtn.textContent = '✓ Message Sent!';
-        submitBtn.style.background = 'linear-gradient(135deg, #43e97b, #38f9d7)';
-        
-        setTimeout(() => {
-          contactForm.reset();
-          submitBtn.textContent = 'Send Message';
-          submitBtn.style.background = 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)';
-        }, 2000);
-      }
-    });
-
-    // Parallax effect for cards
-    document.addEventListener('mousemove', (e) => {
-      const cards = document.querySelectorAll('.card, .service-card');
-      cards.forEach(card => {
-        const rect = card.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-        
-        if (x >= 0 && x <= rect.width && y >= 0 && y <= rect.height) {
-          const centerX = rect.width / 2;
-          const centerY = rect.height / 2;
-          const rotateX = (y - centerY) / 20;
-          const rotateY = (centerX - x) / 20;
-          
-          card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-10px)`;
-        } else {
-          card.style.transform = '';
-        }
-      });
-    });
-
-    // Intersection Observer for fade-in animations
-    const observerOptions = {
-      threshold: 0.1,
-      rootMargin: '0px 0px -50px 0px'
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.style.animation = 'fadeInUp 0.8s ease forwards';
-          observer.unobserve(entry.target);
-        }
-      });
-    }, observerOptions);
-
-    document.querySelectorAll('.card, .service-card, .about-content, .contact-item').forEach(el => {
-      el.style.opacity = '0';
-      observer.observe(el);
-    });
-  </script>
-</body>
-</html>
+      // Scroll
